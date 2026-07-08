@@ -1,0 +1,21 @@
+CREATE DATABASE login_system;
+USE login_system;
+CREATE TABLE users(
+id INT PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(100) NOT NULL,
+email VARCHAR(100) UNIQUE NOT NULL,
+mobile VARCHAR(15) UNIQUE NOT NULL,
+username VARCHAR(50) UNIQUE NOT NULL,
+password VARCHAR(100) NOT NULL,
+security_question VARCHAR(200),
+security_answer VARCHAR(200),
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE admin(
+id INT PRIMARY KEY AUTO_INCREMENT,
+username VARCHAR(50) UNIQUE,
+password VARCHAR(100)
+);
+INSERT INTO admin(username,password)
+VALUES
+('abhi','admin123');
